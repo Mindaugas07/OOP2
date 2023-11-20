@@ -178,31 +178,143 @@
 #     print(PP.title)
 #     print(PP.author)
 
-class Country:
-    def __init__(self, country_name: str, population: int, area: int) -> None:
-        self.country_name: str = country_name
-        self.population: int = population
-        self.area: int = area
-        if self.population > 20000000 or self.area > 3000000:
-            self.is_big: bool = True
-        else:
-            self.is_big: bool = False
+# class Country:
+#     def __init__(self, country_name: str, population: int, area: int) -> None:
+#         self.country_name: str = country_name
+#         self.population: int = population
+#         self.area: int = area
+#         if self.population > 20000000 or self.area > 3000000:
+#             self.is_big: bool = True
+#         else:
+#             self.is_big: bool = False
 
-    # def is_big_or_not(self) -> bool:
-    #     if self.population > 20000000 or self.area > 3000000:
-    #         self.is_big = True
-    def compare_pd(self, other_country: "Country") -> str:
-        country_density = self.population / self.area 
-        other_country_density = other_country.population / other_country.area
-        if country_density > other_country_density:
-            return f"{self.country_name} has a larger population density than {other_country.country_name}"
-        else:
-            return f"{self.country_name} has a smaller population density than {other_country.country_name}"
+#     # def is_big_or_not(self) -> bool:
+#     #     if self.population > 20000000 or self.area > 3000000:
+#     #         self.is_big = True
+#     def compare_pd(self, other_country: "Country") -> str:
+#         country_density = self.population / self.area 
+#         other_country_density = other_country.population / other_country.area
+#         if country_density > other_country_density:
+#             return f"{self.country_name} has a larger population density than {other_country.country_name}"
+#         else:
+#             return f"{self.country_name} has a smaller population density than {other_country.country_name}"
 
 
+# if __name__ == "__main__":
+#     australia = Country("Australia", 23545500, 7692024)
+#     andorra = Country("Andorra", 76098, 468)
+#     print(australia.is_big)
+#     print(andorra.is_big)
+#     print(andorra.compare_pd(australia))
+
+# Create a Python class named Fraudster with the following attributes:
+# email_domain: A string representing the email domain associated with fraudulent activities (e.g., "@gmail.com").
+# amount: An integer representing the total amount fraudulently approved.
+# number_of_users: An integer representing the number of users associated with the specified email domain.
+# Implement two methods within the class:
+# fraud_amount_by_domain(): This method should return a string indicating the amount that was fraudulently received with the specified email domain.
+# users_by_domain(): This method should return a string indicating the number of users using the specified email domain.
+# initiate three classes:
+# Spain_fraud -> email_domain="@gmail.com", amount=100000, number_of_users=5
+# French_fraud -> email_domain="@yahoo.com", amount=453295, number_of_users=19
+# Latin_america_fraud = "@yandex.ru", amount=1036594, number_of_users=2
+ 
+# implement methods created in the class to return various information about these fraud rings
+
+# class Fraudster:
+#     def __init__(self, email_domain: str, amount: int, number_of_users: int) -> None:
+#         self.email_domain = email_domain
+#         self.amount = amount
+#         self.number_of_users = number_of_users
+
+#     def fraud_amount_by_domain(self) -> str:
+#         return f"{self.amount} times {self.email_domain} was used fraudulently"
+    
+#     def users_by_domain(self) -> str:
+#         return f"{self.number_of_users} users using the {self.email_domain} email domain"
+
+    
+# if __name__ == "__main__":
+#     spain_fraud = Fraudster(email_domain="@gmail.com", amount=100000, number_of_users=5)
+#     french_fraud = Fraudster(email_domain="@yahoo.com", amount=453295, number_of_users=19)
+#     latin_america_fraud = Fraudster(email_domain="@yandex.ru", amount=1036594, number_of_users=2)
+#     print(spain_fraud.fraud_amount_by_domain())
+#     print(french_fraud.users_by_domain())
+
+# 1. Create class Country which takes 2 arguments (country_name, population).
+#   Create methods to return:
+#   1) country name
+#   2) Population
+#   3) How many letters are in country name 
+#   4) Get population status: (if population is less than 5 million that mean low, more or equal to 5 millions and less than 10 millions means average, else high.
+
+# class Country:
+#     def __init__(self, country_name: str, population: int) -> None:
+#         self.country_name = country_name
+#         self.population = population
+
+#     def get_country(self) -> str:
+#         return self.country_name
+    
+#     def get_population(self) -> str:
+#         return self.population
+    
+#     def get_country_name_letter_number(self) -> str:
+#         return len(self.country_name)
+    
+#     def population_status(self) -> str:
+#         if self.population < 5000000:
+#             return f"Population of {self.country_name} is low"
+#         elif self.population < 10000000:
+#             return f"Population of {self.country_name} is laverage"
+#         else:
+#             return f"Population of {self.country_name} is high"
+        
+# if __name__ == "__main__":
+#     lietuva = Country("Lithuania", 3000000)
+#     print(lietuva.get_country())
+#     print(lietuva.get_population())
+#     print(lietuva.get_country_name_letter_number())
+#     print(lietuva.population_status())
+
+
+
+
+#2. Create a program that user enters name, surname, email_provider, age (example: Thom, Nelson, gmail, 12 )
+# Program should list options to choose:
+#  - Generate some email variants from all data provided
+#  - Get year of birth 
+#  - Return all personal info (including generic email and year of birth)
+
+
+# Must use class for dealing with data. Error handling, types. Input should be invoked as a script (if __name__ ....)
+
+
+class People:
+    def __init__(self, person_ditc=None) -> None:
+        if person_ditc is not None:
+            for key, value in person_ditc.items():
+                setattr(self, key, value)
+
+    def generate_email(self) -> str:
+        
+
+
+
+
+    
 if __name__ == "__main__":
-    australia = Country("Australia", 23545500, 7692024)
-    andorra = Country("Andorra", 76098, 468)
-    print(australia.is_big)
-    print(andorra.is_big)
-    print(andorra.compare_pd(australia))
+
+    def user_input_to_dict():
+        person_string = input("Please enter your name, surname, email_provider, age (example: Thom, Nelson, gmail, 12): ")
+        person_dict = {"name": "", "surname": "", "email_provider": "", "age": ""}
+        for index, key in enumerate(person_dict):
+            person_dict[key] = person_string.split(", ")[index]
+        return person_dict
+
+person = People(user_input_to_dict())
+print(person.name)
+  
+    
+
+    
