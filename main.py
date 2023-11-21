@@ -290,31 +290,105 @@
 # Must use class for dealing with data. Error handling, types. Input should be invoked as a script (if __name__ ....)
 
 
-class People:
-    def __init__(self, person_ditc=None) -> None:
-        if person_ditc is not None:
-            for key, value in person_ditc.items():
-                setattr(self, key, value)
+# class People:
+#     CURRENT_YEAR = 2023
 
-    def generate_email(self) -> str:
-        
+#     def __init__(self, person_ditc=None) -> None:
+#         if person_ditc is not None:
+#             for key, value in person_ditc.items():
+#                 setattr(self, key, value)
+
+#     def generate_email(self) -> str:
+#         return f"{self.name.lower()}{self.surname.lower()}@{self.email_provider.lower()}.com"
 
 
 
 
     
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    def user_input_to_dict():
-        person_string = input("Please enter your name, surname, email_provider, age (example: Thom, Nelson, gmail, 12): ")
-        person_dict = {"name": "", "surname": "", "email_provider": "", "age": ""}
-        for index, key in enumerate(person_dict):
-            person_dict[key] = person_string.split(", ")[index]
-        return person_dict
+#     def user_input_to_dict():
+#         person_string = input("Please enter your name, surname, email_provider, age (example: Thom, Nelson, gmail, 12): ")
+#         person_dict = {"name": "", "surname": "", "email_provider": "", "age": ""}
+#         for index, key in enumerate(person_dict):
+#             person_dict[key] = person_string.replace(" ", "").split(",")[index]
+#         return person_dict
 
-person = People(user_input_to_dict())
-print(person.name)
+# person = People(user_input_to_dict())
+# print(person.generate_email())
   
-    
 
-    
+# class Person:
+#     CURRENT_YEAR: int = 2023
+
+#     def __init__(self, name: str, surname: str, email_provider: str, age: int) -> None:
+#         self.name = name
+#         self.surname = surname
+#         self.email_provider = email_provider
+#         self.age = age
+
+#     def email_generator(self) -> str:
+#         return f"Some email variants for you:\n{self.name.lower()}.{self.surname.lower()}@{self.email_provider.lower()}\n{self.surname.lower()}.{self.age}.{self.name.lower()}@{self.email_provider.lower()}"
+
+#     def get_year_of_birth(self) -> int:
+#         return self.CURRENT_YEAR - self.age
+
+#     def get_personal_info(self) -> str:
+#         return f"Name: {self.name}\nSurname: {self.surname}\nEmail: {self.name.lower()}.{self.surname.lower()}@{self.email_provider.lower()}\nAge: {self.age}"
+
+
+# def main_menu(person_info: str) -> None:
+#     person_info_list = person_info.replace(" ", "").split(",")
+#     name = person_info_list[0]
+#     surname = person_info_list[1]
+#     email_provider = person_info_list[2]
+#     age = int(person_info_list[3])
+
+#     person = Person(
+#         name=name,
+#         surname=surname,
+#         email_provider=email_provider,
+#         age=age,
+#     )
+#     menu_entries: str = "\n1. Generate some email variants\n2. Get year of birth\n3. Return all personal info\n4. End program.\nPlease enter number of your selection: "
+
+#     while True:
+#         menu_select: str = input(menu_entries)
+#         print()
+
+#         if menu_select.isnumeric() == True:
+#             if menu_select == "1":
+#                 print(person.email_generator())
+#             elif menu_select == "2":
+#                 print(person.get_year_of_birth())
+#             elif menu_select == "3":
+#                 print(person.get_personal_info())
+#             elif menu_select == "4":
+#                 print("Bye")
+#                 break
+#             else:
+#                 print("There is no such selection.")
+#         else:
+#             print(
+#                 "Please enter number from list provided without any symbols and spaces."
+#             )
+
+
+# if __name__ == "__main__":
+#     person_info: str = input(
+#         "Enter name, surname, email_provider, age (example: Thom, Nelson, gmail, 12 ): "
+#     )
+
+#     try:
+#         main_menu(person_info)
+#     except Exception as err:
+#         print(f"You've got an {err} error.")    
+
+# class Person:
+#     def __init__(self, name: str, surname: str) -> None:
+#         self.name = name
+#         self.surname = surname
+
+# human = Person(name="Kestutis", surname="Algirdaitis")
+# human.name = "Jogaila"
+# print(human.name)
